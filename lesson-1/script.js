@@ -17,7 +17,6 @@ const renderGoodsList = (list) => {
     list.forEach((el) => {
         let goodsList = renderGoodsItem(el);
         document.querySelector('.goods-list').innerHTML += goodsList;
-
     });
 }
 
