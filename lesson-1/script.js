@@ -33,3 +33,10 @@ const renderGoodsItem = (el) => {
 }
 
 renderGoodsList(goods);
+
+/*
+Я извиняюсь за не правильно созданый pull request.
+За время перерыва в учебе все приходится вспоминать с не малыми усилиями.
+Ссылка на репозиторий: https://github.com/AlexS342/AdvancedJavaScriptCourse
+*/
+
