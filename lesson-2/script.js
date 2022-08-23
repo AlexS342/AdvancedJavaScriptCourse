@@ -25,12 +25,12 @@ class GoodsList {
     }
     fetchGoods() {
         this.goods = [
-            { id: 1, title: 'Утка', price: 10, img: 'img/duck.jpg', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium earum sint vel!" },
-            { id: 2, title: 'Рябчик', price: 15, img: 'img/grouse.jpg', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium earum sint vel!" },
-            { id: 3, title: 'Вальдшнеп', price: 12, img: 'img/woodcock.jpg', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium earum sint vel!" },
+            { id: 1, title: 'Утка', price: 15, img: 'img/duck.jpg', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium earum sint vel!" },
+            { id: 2, title: 'Рябчик', price: 20, img: 'img/grouse.jpg', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium earum sint vel!" },
+            { id: 3, title: 'Вальдшнеп', price: 10, img: 'img/woodcock.jpg', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium earum sint vel!" },
             { id: 4, title: 'Тетерев', price: 50, img: 'img/blackGrouse.jpg', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium earum sint vel!" },
             { id: 5, title: 'Глухарь', price: 100, img: 'img/capercaillie.jpeg', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium earum sint vel!" },
-            { id: 6, title: 'Вяхирь', price: 10, img: 'img/woodPigeon.jpg', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium earum sint vel!" },
+            { id: 6, title: 'Вяхирь', price: 15, img: 'img/woodPigeon.jpg', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium earum sint vel!" },
             { id: 7, title: 'Куропатка', price: 20, img: 'img/partridge.jpg', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium earum sint vel!" },
             { id: 8, title: 'Бобр', price: 150, img: 'img/beaver.jpg', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium earum sint vel!" },
             { id: 9, title: 'Куница', price: 250, img: 'img/marten.jpg', description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti laudantium earum sint vel!" },
@@ -47,6 +47,13 @@ class GoodsList {
         });
         document.querySelector('.goods-list').innerHTML = listHtml;
     }
+    getCalculateTotolPrice() {
+        let totol = 0;
+        this.goods.forEach(goods => {
+            totol += goods.price;
+        });
+        return totol;
+    }
 }
 
 const list = new GoodsList();
@@ -55,41 +62,41 @@ list.render();
 
 /*1. Добавьте пустые классы для Корзины товаров и Элемента корзины товаров. Продумайте,
     какие методы понадобятся для работы с этими сущностями.*/
-class Basket{ //Корзина
-    constructor(){
+class Basket { //Корзина
+    constructor() {
         this.bayProduct = []; /*Массив товаров в виде объектов добавленных в карзину*/
     }
-    addItem(){} /*Добавляем товар в корзину*/
-    removeItem(){} /*Убираем товар из карзины*/
-    increaseItem(){} /*Увеличиваем количество товара в корзине*/
-    decreaseItem(){} /*Уменьшаем количество товара в корзине*/
-    clearBasket(){} /*Очищаем корзину*/
-    costPosition(){} /*считаем стоимость одной позиции товара с учетом ее количества */
-    TotolCost(){} /*Считаем полную стоимость товаров в карзине*/
+    addItem() { } /*Добавляем товар в корзину*/
+    removeItem() { } /*Убираем товар из карзины*/
+    increaseItem() { } /*Увеличиваем количество товара в корзине*/
+    decreaseItem() { } /*Уменьшаем количество товара в корзине*/
+    clearBasket() { } /*Очищаем корзину*/
+    costPosition() { } /*считаем стоимость одной позиции товара с учетом ее количества */
+    TotolCost() { } /*Считаем полную стоимость товаров в карзине*/
 }
 
-class Purchase{ //Покупка
-    constructor(){
+class Purchase { //Покупка
+    constructor() {
         this.id = id;                   //id покупки
         this.Product = product;         //Купленные товары
         this.Bayer = bayer;             //Покупатель
         this.delivery = delivery;       //Выбрать способ доставки
         this.condition = condition;     //Состояние сделки (Оплачено, отправлено, доставлено, получено)
     }
-    addBay(){}
+    addBay() { }
 }
 
- class Delivery{    //Почтовые компании
-    constructor(){
+class Delivery {    //Почтовые компании
+    constructor() {
         this.name   //Название компании
     }
 }
- 
+
 /*
 Возможно потребуется покупатель с методом "Совершить покупку"
 */
-class Buyer{ //Зарегестрированный пользователь магазина с личными данными
-    constructor(id, FirstName, lastName, patronymic, gender, dateBirth, address){
+class Buyer { //Зарегестрированный пользователь магазина с личными данными
+    constructor(id, FirstName, lastName, patronymic, gender, dateBirth, address) {
         this.id = id;                   //id пользователя
         this.FirstName = FirstName;     //Имя пользователя
         this.lastName = lastName;       //Фамилия пользователя
@@ -98,20 +105,15 @@ class Buyer{ //Зарегестрированный пользователь м�
         this.dateBirth = dateBirth;     //Дата рождения
         this.address = address;         //Адрес доставки
     }
-    bayAllBascet(){} //Производим оплату покупки всех товаров, добавленных в карзину
+    bayAllBascet() { } //Производим оплату покупки всех товаров, добавленных в карзину
 }
 
 /*
 Возможно должен быть реестор совершенных покупок всеми ползователями
 */
-class PurchaseRegister{
-    constructor(){
+class PurchaseRegister {
+    constructor() {
         this.perfectPurchase = []; //массив покупок
     }
-    registrationBay(){} //метод заносит данные о сделке в массив
+    registrationBay() { } //метод заносит данные о сделке в массив
 }
-
- /*
- 2. Добавьте для GoodsList метод, определяющий суммарную стоимость всех товаров.
- 
- */
