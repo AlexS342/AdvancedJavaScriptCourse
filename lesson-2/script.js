@@ -52,3 +52,66 @@ class GoodsList {
 const list = new GoodsList();
 list.fetchGoods();
 list.render();
+
+/*1. Добавьте пустые классы для Корзины товаров и Элемента корзины товаров. Продумайте,
+    какие методы понадобятся для работы с этими сущностями.*/
+class Basket{ //Корзина
+    constructor(){
+        this.bayProduct = []; /*Массив товаров в виде объектов добавленных в карзину*/
+    }
+    addItem(){} /*Добавляем товар в корзину*/
+    removeItem(){} /*Убираем товар из карзины*/
+    increaseItem(){} /*Увеличиваем количество товара в корзине*/
+    decreaseItem(){} /*Уменьшаем количество товара в корзине*/
+    clearBasket(){} /*Очищаем корзину*/
+    costPosition(){} /*считаем стоимость одной позиции товара с учетом ее количества */
+    TotolCost(){} /*Считаем полную стоимость товаров в карзине*/
+}
+
+class Purchase{ //Покупка
+    constructor(){
+        this.id = id;                   //id покупки
+        this.Product = product;         //Купленные товары
+        this.Bayer = bayer;             //Покупатель
+        this.delivery = delivery;       //Выбрать способ доставки
+        this.condition = condition;     //Состояние сделки (Оплачено, отправлено, доставлено, получено)
+    }
+    addBay(){}
+}
+
+ class Delivery{    //Почтовые компании
+    constructor(){
+        this.name   //Название компании
+    }
+}
+ 
+/*
+Возможно потребуется покупатель с методом "Совершить покупку"
+*/
+class Buyer{ //Зарегестрированный пользователь магазина с личными данными
+    constructor(id, FirstName, lastName, patronymic, gender, dateBirth, address){
+        this.id = id;                   //id пользователя
+        this.FirstName = FirstName;     //Имя пользователя
+        this.lastName = lastName;       //Фамилия пользователя
+        this.patronymic = patronymic;   //Отчество пользователя
+        this.gender = gender;           //Пол (М/Ж)
+        this.dateBirth = dateBirth;     //Дата рождения
+        this.address = address;         //Адрес доставки
+    }
+    bayAllBascet(){} //Производим оплату покупки всех товаров, добавленных в карзину
+}
+
+/*
+Возможно должен быть реестор совершенных покупок всеми ползователями
+*/
+class PurchaseRegister{
+    constructor(){
+        this.perfectPurchase = []; //массив покупок
+    }
+    registrationBay(){} //метод заносит данные о сделке в массив
+}
+
+ /*
+ 2. Добавьте для GoodsList метод, определяющий суммарную стоимость всех товаров.
+ 
+ */
