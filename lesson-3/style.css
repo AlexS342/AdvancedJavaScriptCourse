@@ -1,7 +1,8 @@
 /*CSS RESET*/
-/* http://meyerweb.com/eric/tools/css/reset/ 
-    v2.0 | 20110126
-    License: none (public domain)
+/* 
+http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
 */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
 em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
@@ -16,11 +17,6 @@ blockquote:before, blockquote:after, q:before, q:after {content: ''; content: no
 table {border-collapse: collapse; border-spacing: 0;}
 
 /*Мои стили*/
-.cart-search {
-    font-size: 24px;
-    color: red;
-}
-
 .cart-wrpButton {
     width: 100%;
     box-sizing: border-box;
@@ -45,6 +41,85 @@ table {border-collapse: collapse; border-spacing: 0;}
 }
 
 .cart-button:active {
+    color: #c259ff;
+}
+
+.basket {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.basket-item {
+    margin: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 1px solid rgb(133, 133, 133);
+}
+
+.basket-itemLeft {
+    display: flex;
+    align-items: center;
+}
+
+.basket-wrpItemImg {
+    width: 100px;
+    height: 50px;
+    margin: 5px;
+    overflow: hidden;
+}
+
+.basket-itemImg {
+    width: 100%;
+}
+
+.basket-itemTitle {
+    max-width: 500px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    margin: 5px;
+}
+
+.basket-itemRight {
+    display: flex;
+    align-items: center;
+}
+
+.basket-itemCount {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    margin: 5px;
+}
+
+.basket-itemPrice {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 14px;
+    margin: 5px;
+}
+
+.basket-itemButtonPlus,
+.basket-itemButtonMinus,
+.basket-itemButtonDel {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid blue;
+    background-color: #d8eaff;
+    color: #767676;
+    margin: 5px;
+}
+
+.basket-itemButtonPlus:hover,
+.basket-itemButtonMinus:hover,
+.basket-itemButtonDel:hover {
+    background-color: #6569ff;
+}
+
+.basket-itemButtonPlus:active,
+.basket-itemButtonMinus:active,
+.basket-itemButtonDel:active {
     color: #c259ff;
 }
 
@@ -102,17 +177,6 @@ table {border-collapse: collapse; border-spacing: 0;}
     color: rgb(66, 21, 0);
 }
 
-.goods-itemDescription {
-    width: 250px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 12px;
-    font-weight: 200;
-    font-style: italic;
-    text-align: justify;
-    letter-spacing: 0.2em;
-    padding-bottom: 5px;
-}
-
 .goods-itemPrice {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 14px;
@@ -136,14 +200,29 @@ table {border-collapse: collapse; border-spacing: 0;}
     color: #c259ff;
 }
 
-/*
-Я извиняюсь за не правильно созданый pull request.
-За время перерыва в учебе все приходится вспоминать с не малыми усилиями.
-Ссылка на репозиторий: https://github.com/AlexS342/AdvancedJavaScriptCourse
-*/
+/*Общие классы*/
+.hide {
+    display: none;
+}
 
+/*CSS RESET*/
+/* 
+http://meyerweb.com/eric/tools/css/reset/ 
+v2.0 | 20110126
+License: none (public domain)
+*/
 /*
-Вопрос:
-Вы можете подсказать, как зделать так, чтобы строчки 6 - 16 при сохранении не превращались в милион строчек с каждым тегом в отдельной строке?
-Пишу код в Visual Studio Code!
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn,
+em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, 
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, 
+output, ruby, section, summary, time, mark, audio, video {margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;}
+*/
+/* HTML5 display-role reset for older browsers */
+/*
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+body {line-height: 1;}
+ol, ul {list-style: none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after, q:before, q:after {content: ''; content: none;}
+table {border-collapse: collapse; border-spacing: 0;}
 */
