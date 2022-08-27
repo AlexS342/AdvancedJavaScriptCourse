@@ -97,38 +97,64 @@ class Basket {
         });
     }
 
-    removeItem() { }
-
     changeItem() { }
+
+    removeItem() { }
 
 }
 
 class ItemBasket {
     constructor(product, img = "https://imgholder.ru/600x300/E2FF83/888.jpg&text=Product&fz=80") {
+        this.id_product = product.id_product;
         this.title = product.product_name;
-        this.prise = product.price;
+        this.price = product.price;
+        this.quantity = product.quantity;
         this.img = img;
-        this.count = 0;
     }
     render() {
-        return `<div class="basket-item">
-                    <div class="basket-wrpItemImg">
-                        <img class="basket-itemImg" src="${this.img}" alt="${this.title}">
+        return `<div class="basket-item" data-id="${this.id_product}">
+                    <div class="basket-itemLeft">
+                        <div class="basket-wrpItemImg">
+                            <img class="basket-itemImg" src="${this.img}" alt="${this.title}">
+                        </div>
+                        <h3 class="basket-itemTitle">${this.title}</h3>
                     </div>
-                    <h3 class="basket-itemTitle">${this.title}</h3>
-                    <p class="basket-itemCount">${this.count}руб.</p>
+                    <div class="basket-itemRight">
+                    <p class="basket-itemCount data-id="${this.id_product}">${this.quantity}шт.</p>
                     <p class="basket-itemPrice">${this.price}руб.</p>
-                    <button class="basket-itemButton" type="button">Добавить</button>
-                    <button class="basket-itemButton" type="button">Убрать</button>
+                    <button class="basket-itemButtonPlus" data-id="${this.id_product}" type="button">&#9650;</button>
+                    <button class="basket-itemButtonMinus" data-id="${this.id_product}" type="button">&#9660;</button>
+                    <button class="basket-itemButtonDel" data-id="${this.id_product}" type="button">&#128465;</button>
+                    </div>
                 </div>`;
     }
 }
 
-
-
-
-
 const list = new ProductList();
 list._getProducts("catalogData.json");
+
+
 const myBasket = new Basket();
 myBasket._getProducts("getBasket.json");
+
+let buttonBasket = document.querySelector(".cart-button");
+let basket = document.querySelector(".basket");
+
+buttonBasket.addEventListener("click", () => {
+    basket.classList.toggle("hide");
+});
+
+basket.addEventListener("click", (event) => {
+    let el = event.target.dataset.id;
+    let bl = document.querySelectorAll(".basket-item")
+
+})
+
+/*
+Если я правильно понял, то обязательное задание я выполнил. К сожелению с 
+дополнительнм пока справится не получилось, но с любопытством посмотрю в 
+разборе ДЗ.
+Если я правильно понимаю, то для классов ProductList и Basket можно создать
+родительский класс, в который можно вынести методы getAPI, postAPI, render,
+changeItem и removeItem.
+*/
