@@ -1,42 +1,42 @@
-const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';
+const API = 'https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses';                   //Указываем ссылку для получения json
 
-const app = new Vue({
-    el: '#app',
-    data: {
-        catalogUrl: '/catalogData.json',
-        products: [],
-        filtered: [],
-        imgCatalog: 'https://via.placeholder.com/200x150',
-        userSearch: '',
-        show: false
+const app = new Vue({                                                                                                   //Создаем экземпляр класса VUE (своства)
+    el: '#app',                                                                                                         //Связываем класс VUE с HTML
+    data: {                                                                                                             //Раздел с данными для подстановки
+        catalogUrl: '/catalogData.json',                                                                                //Имяjson из которого получаем каталог товаров
+        products: [],                                                                                                   //Масив товаров для каталога
+        filtered: [],                                                                                                   //Масив отфильтрованных товаров
+        imgCatalog: 'https://via.placeholder.com/200x150',                                                              //Картинка-заглушка
+        userSearch: '',                                                                                                 //То, что ввел пользователь в поиске товаров
+        show: false                                                                                                     //Флаг - нужно ли отображать карзину товаров
     },
-    methods: {
-        filter(){
-         const regexp = new RegExp(this.userSearch, 'i');
-         this.filtered = this.products.filter(product => regexp.test(product.product_name));
+    methods: {                                                                                                          //Используемые методы
+        filter() {                                                                                                      //Фильтр выбирает товары по вводу в поле search
+            const regexp = new RegExp(this.userSearch, 'i');                                                            //Правило: то, что ввел пользователь без учета регистра
+            this.filtered = this.products.filter(product => regexp.test(product.product_name));                         //test вернет true если имя товара совпало соответствует правилу, а filter проверяет все элемены и возвращает толь те, при которых получил true
         },
-        getJson(url){
-            return fetch(url)
-                .then(result => result.json())
-                .catch(error => {
-                    console.log(error);
+        getJson(url) {                                                                                                  //Получаем JS (Принимаем ссылку)
+            return fetch(url)                                                                                           //Запрашиваем json по ссылке
+                .then(result => result.json())                                                                          //если успешно, то вернет промис
+                .catch(error => {                                                                                       //если не успешно, то
+                    console.log(error);                                                                                 //то выводим ошибку в консоль
                 })
         },
-        addProduct(product){
-                console.log(product.id_product);
+        addProduct(product) {                                                                                           //добавить продукт в карзину
+            console.log(product.id_product);                                                                            //заглушка с выводом в консоль
         }
     },
-    mounted(){
-       this.getJson(`${API + this.catalogUrl}`)
-           .then(data => {
-               for(let el of data){
-                   this.products.push(el);
-               }
-           });
-        this.getJson(`getProducts.json`)
-            .then(data => {
-                for(let el of data){
-                    this.products.push(el);
+    mounted() {                                                                                                         //Монтируем (запускаем сразу же при запуске страницы)
+        this.getJson(`${API + this.catalogUrl}`)                                                                        //Запрашиваем json с сервера
+            .then(data => {                                                                                             //полученый промис
+                for (let el of data) {                                                                                  //Перебираем в цикле каждый элемент промиса
+                    this.products.push(el);                                                                             //Добавляем в массив каталога товаров
+                }
+            });
+        this.getJson(`getProducts.json`)                                                                                //Запрашиваем json
+            .then(data => {                                                                                             //полученый промис
+                for (let el of data) {                                                                                  //Перебираем в цикле каждый элемент промиса
+                    this.products.push(el);                                                                             //Добавляем в массив каталога товаров
                 }
             })
     }
