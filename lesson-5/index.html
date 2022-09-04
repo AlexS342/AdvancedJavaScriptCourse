@@ -9,16 +9,13 @@
 </head>
 
 <body>
-    <!-- id для работы VUE-->
     <div id="app">
         <header>
             <div class="logo">E-shop</div>
             <div class="cart">
                 <form action="#" class="search-form">
-                    <!--v-mobel связывает данные из input и js-->
                     <input type="text" class="search-field" v-model="userSearch">
-                    <button class="btn-search" type="submit">
-                        <!--Пока не понятно для чего в кнопке пустой курсив, классы fas и fa-search не используются-->
+                    <button @click="filter()" class="btn-search" type="submit">
                         <i class="fas fa-search"></i>
                     </button>
                 </form>
@@ -28,14 +25,11 @@
         </header>
         <main>
             <div class="products">
-                <!--v-for="product of products" выводим все элементы (product) из массива products, :key="product.id_product" для младших версий VUE, мне не нужен-->
-                <div class="product-item" v-for="product of products" :key="product.id_product">
-                    <!--:src="imgCatalog" Указывае картинку (двоеточие указывает, что нужно брать значение из data vue)-->
+                <div class="product-item" v-for="filtered of filtereds">
                     <img :src="imgCatalog" alt="Some img">
                     <div class="desc">
-                        <!--{{product.product_name}} и {{product.price}} подставляем данные из объекта (Усатый стиль VUE)-->
-                        <h3>{{product.product_name}}</h3>
-                        <p>{{product.price}} $</p>
+                        <h3>{{filtered.product_name}}</h3>
+                        <p>{{filtered.price}} $</p>
                         <button class="buy-btn" @click="addProduct(product)">Купить</button>
                     </div>
                 </div>

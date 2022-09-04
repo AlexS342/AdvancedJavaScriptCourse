@@ -5,7 +5,7 @@ const app = new Vue({                                                           
     data: {                                                                                                             //Раздел с данными для подстановки
         catalogUrl: '/catalogData.json',                                                                                //Имяjson из которого получаем каталог товаров
         products: [],                                                                                                   //Масив товаров для каталога
-        filtered: [],                                                                                                   //Масив отфильтрованных товаров
+        filtereds: [],                                                                                                   //Масив отфильтрованных товаров
         imgCatalog: 'https://via.placeholder.com/200x150',                                                              //Картинка-заглушка
         userSearch: '',                                                                                                 //То, что ввел пользователь в поиске товаров
         show: false                                                                                                     //Флаг - нужно ли отображать карзину товаров
@@ -13,7 +13,7 @@ const app = new Vue({                                                           
     methods: {                                                                                                          //Используемые методы
         filter() {                                                                                                      //Фильтр выбирает товары по вводу в поле search
             const regexp = new RegExp(this.userSearch, 'i');                                                            //Правило: то, что ввел пользователь без учета регистра
-            this.filtered = this.products.filter(product => regexp.test(product.product_name));                         //test вернет true если имя товара совпало соответствует правилу, а filter проверяет все элемены и возвращает толь те, при которых получил true
+            this.filtereds = this.products.filter(product => regexp.test(product.product_name));                         //test вернет true если имя товара совпало соответствует правилу, а filter проверяет все элемены и возвращает толь те, при которых получил true
         },
         getJson(url) {                                                                                                  //Получаем JS (Принимаем ссылку)
             return fetch(url)                                                                                           //Запрашиваем json по ссылке
@@ -31,14 +31,16 @@ const app = new Vue({                                                           
             .then(data => {                                                                                             //полученый промис
                 for (let el of data) {                                                                                  //Перебираем в цикле каждый элемент промиса
                     this.products.push(el);                                                                             //Добавляем в массив каталога товаров
+                    this.filtereds.push(el);
                 }
             });
         this.getJson(`getProducts.json`)                                                                                //Запрашиваем json
             .then(data => {                                                                                             //полученый промис
                 for (let el of data) {                                                                                  //Перебираем в цикле каждый элемент промиса
                     this.products.push(el);                                                                             //Добавляем в массив каталога товаров
+                    this.filtereds.push(el);
                 }
-            })
+            });
     }
 })
 
