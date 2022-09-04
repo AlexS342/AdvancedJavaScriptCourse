@@ -18,7 +18,7 @@
                     <!--v-mobel связывает данные из input и js-->
                     <input type="text" class="search-field" v-model="userSearch">
                     <button class="btn-search" type="submit">
-                        <!--Пока не понятно для чего в кнопке пустой курсив, классы не используются-->
+                        <!--Пока не понятно для чего в кнопке пустой курсив, классы fas и fa-search не используются-->
                         <i class="fas fa-search"></i>
                     </button>
                 </form>
@@ -30,7 +30,7 @@
             <div class="products">
                 <!--v-for="product of products" выводим все элементы (product) из массива products, :key="product.id_product" для младших версий VUE, мне не нужен-->
                 <div class="product-item" v-for="product of products" :key="product.id_product">
-                    <!--:src="imgCatalog" Указывае картинку-->
+                    <!--:src="imgCatalog" Указывае картинку (двоеточие указывает, что нужно брать значение из data vue)-->
                     <img :src="imgCatalog" alt="Some img">
                     <div class="desc">
                         <!--{{product.product_name}} и {{product.price}} подставляем данные из объекта (Усатый стиль VUE)-->
