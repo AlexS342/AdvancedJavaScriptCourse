@@ -1,0 +1,42 @@
+.nav-item {
+
+    &__title {
+        @include font();
+        text-transform: uppercase;
+        margin-top: 20px;
+    }
+
+    &__title-link {
+        text-decoration: none;
+        color: $pink-color;
+    }
+
+    &__title-link:hover,
+    &__title-link:focus {
+        color: $nav-pink-color-hover;
+    }
+
+    &__title-link:active {
+        color: $white-color-active;
+    }
+
+    &__item {
+        @include font();
+        margin-top: 11px;
+        padding-left: 21px;
+    }
+
+    &__item-link {
+        text-decoration: none;
+        color: $nav-gray-color;
+    }
+
+    &__item-link:hover,
+    &__item-link:focus {
+        color: $nav-gray-color-hover;
+    }
+
+    &__item-link:active {
+        color: $white-color-active;
+    }
+}

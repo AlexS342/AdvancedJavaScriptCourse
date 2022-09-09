@@ -1,0 +1,76 @@
+.brand {
+    display: flex;
+    background-color: $pink-bkg;
+    align-items: center;
+    min-height: 363px;
+
+    &__img {
+        width: 50%;
+
+        @media (max-width: 767px) {
+            display: none;
+        }
+    }
+
+    &__title {
+        @include font(48px, 57px, 900);
+        /*
+        font-size: 48px;
+        line-height: 57px;
+        font-weight: 900;
+        */
+        text-transform: uppercase;
+        margin-left: 92px;
+        color: $black-color;
+        position: relative;
+
+        @media (max-width: 1023px) {
+            @include font(44px, 52px, 900);
+            margin-left: 80px;
+        }
+
+        @media (max-width: 767px) {
+            @include font(38px, 46px, 900);
+        }
+    }
+
+    &__title:before {
+        content: '';
+        width: 12px;
+        height: 92px;
+        position: absolute;
+        top: 4px;
+        left: -28px;
+        background-image: url(../img/rectangle.svg);
+
+        @media (max-width: 1023px) {
+            height: 78px;
+        }
+    }
+
+    &__title-lower {
+        @include font(32px, 38px, 700);
+        /*
+        font-size: 32px;
+        line-height: 38px;
+        font-weight: 700;
+        */
+        display: block;
+
+        @media (max-width: 1023px) {
+            @include font(24px, 28px, 900);
+        }
+
+        @media (max-width: 767px) {
+            @include font(20px, 24px, 900);
+        }
+    }
+
+    &__title-pink {
+        color: $pink-color;
+    }
+}
+
+.brand__title:hover {
+    animation: could 0.4s ease-in-out;
+}
