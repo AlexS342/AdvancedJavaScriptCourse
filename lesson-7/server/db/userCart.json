@@ -1,0 +1,16 @@
+[
+    {
+        "id_product": 4,
+        "product_name": "Голубая футболка",
+        "img": "/4.jpg",
+        "price": 60,
+        "quantity": 2
+    },
+    {
+        "id_product": 5,
+        "product_name": "белая футболка",
+        "img": "/5.jpg",
+        "price": 57,
+        "quantity": 1
+    }
+]
