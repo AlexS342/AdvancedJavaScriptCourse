@@ -217,7 +217,8 @@
                     <span>Место фильтра. К сожалению еще не сделано</span>
                 </div>
                 <ul class="products__list">
-                    <!--Заменяемый блок HTML-->
+                    <!--Блоки li должны поступать от JS-->
+                    <!--
                     <li class="products__item">
                         <img class="products__item-img" src="img/1.jpg" alt="man-1">
                         <a class="products__item-title" href=#>ellery x m'o capsule</a>
@@ -335,6 +336,9 @@
                             </button>
                         </div>
                     </li>
+                    -->
+                    <error v-if="error"></error>
+                    <products :products="filtered" :img="imgProduct" @add-product="addProduct"></products>
                 </ul>
                 <div>
                     <span>Место для выбора страници. К сожалению еще не сделано</span>
