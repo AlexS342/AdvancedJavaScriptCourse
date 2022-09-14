@@ -10,5 +10,15 @@ let change = (cart, req) => {
 
 module.exports = {
     add,
-    change
+    change,
+    remove
+};
+let remove = (cart, req) => {
+    let find = cart.contents.find(el => el.id_product === +req.params.id);
+    if (find.quantity > 1) {
+        find.quantity -= 1;
+    } else {
+        cart.contents.splice(cart.contents.indexOf(find), 1);
+    }
+    return JSON.stringify(cart, null, 4);
 };
