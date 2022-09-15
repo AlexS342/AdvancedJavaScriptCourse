@@ -2,55 +2,55 @@
   {
     "id_product": 1,
     "product_name": "Красная рубаха",
-    "img": "/1.jpg",
+    "img": "./img/1.jpg",
     "price": 200
   },
   {
     "id_product": 2,
     "product_name": "Рюкзак",
-    "img": "/2.jpg",
+    "img": "./img/2.jpg",
     "price": 75
   },
   {
     "id_product": 3,
     "product_name": "Синяя толстовка",
-    "img": "/3.jpg",
+    "img": "./img/3.jpg",
     "price": 120
   },
   {
     "id_product": 4,
     "product_name": "Голубая футболка",
-    "img": "/4.jpg",
+    "img": "./img/4.jpg",
     "price": 60
   },
   {
     "id_product": 5,
     "product_name": "белая футболка",
-    "img": "/5.jpg",
+    "img": "./img/5.jpg",
     "price": 57
   },
   {
     "id_product": 6,
     "product_name": "Голубая кепка",
-    "img": "/6.jpg",
+    "img": "./img/6.jpg",
     "price": 30
   },
   {
     "id_product": 7,
     "product_name": "Белая рубаха",
-    "img": "/7.jpg",
+    "img": "./img/7.jpg",
     "price": 150
   },
   {
     "id_product": 8,
     "product_name": "Кожаная куртка",
-    "img": "/8.jpg",
+    "img": "./img/8.jpg",
     "price": 250
   },
   {
     "id_product": 9,
     "product_name": "Зеленая рубаха",
-    "img": "/9.jpg",
+    "img": "./img/9.jpg",
     "price": 110
   }
 ]
