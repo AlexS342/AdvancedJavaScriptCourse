@@ -47,7 +47,7 @@
                             <input class="header__search-input" type="search" placeholder="search">
                         </label>
                     </div>-->
-                    <search-form></search-form>
+                    <filter-el></filter-el>
                 </div>
                 <ul class="header__manu-list">
                     <li>
@@ -176,6 +176,7 @@
                     </li>
                     <li style="position: relative;">
                         <cart ref="cart"></cart>
+                        <!--    Перенес в JS        -->
                         <!--<a class="header__link" href=#>
                             <svg class="header__basket-icon" width="33" height="29" viewBox="0 0 33 29"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -215,13 +216,9 @@
         </div>
         <div class="conteiner">
             <section class="products">
-                <div>
-                    <span>Место фильтра. К сожалению еще не сделано</span>
-                </div>
+
                 <products ref="products"></products>
-                <div>
-                    <span>Место для выбора страници. К сожалению еще не сделано</span>
-                </div>
+
             </section>
         </div>
         <footer>
