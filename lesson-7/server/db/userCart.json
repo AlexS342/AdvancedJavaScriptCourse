@@ -4,20 +4,13 @@
     "contents": [
         {
             "quantity": 1,
-            "id_product": 7,
-            "product_name": "Белая рубаха",
-            "img": "./img/7.jpg",
-            "price": 150
+            "id_product": 3,
+            "product_name": "Синяя толстовка",
+            "img": "./img/3.jpg",
+            "price": 120
         },
         {
             "quantity": 1,
-            "id_product": 6,
-            "product_name": "Голубая кепка",
-            "img": "./img/6.jpg",
-            "price": 30
-        },
-        {
-            "quantity": 4,
             "id_product": 2,
             "product_name": "Рюкзак",
             "img": "./img/2.jpg",
