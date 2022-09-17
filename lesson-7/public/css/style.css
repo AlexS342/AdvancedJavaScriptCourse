@@ -481,17 +481,42 @@ line-height: 29px;
   flex-direction: column;
   position: absolute;
   z-index: 1000;
-  width: 400px;
   right: -100px;
   background-color: #e6ffec;
 }
 
 .cart-item {
   display: flex;
+  justify-content: space-between;
+  border: 1px solid gray;
 }
 
 .product-desc {
   display: flex;
+  align-items: center;
+}
+
+.product-title {
+  width: 150px;
+  margin-left: 5px;
+}
+
+.product-quantity {
+  width: 110px;
+}
+
+.product-single-price {
+  width: 70px;
+}
+
+.product-price {
+  width: 70px;
+}
+
+.del-btn {
+  width: 15px;
+  height: 15px;
+  margin: 5px;
 }
 
 .product-bio {
@@ -499,11 +524,15 @@ line-height: 29px;
 }
 
 .product-bio>img {
-  width: 200px;
+  width: 36px;
+  width: 42px;
+  border: 1px solid gray;
+  margin: 5px;
 }
 
 .right-block {
   display: flex;
+  align-items: center;
 }
 
 .header__nav {
