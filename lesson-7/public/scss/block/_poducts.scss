@@ -1,0 +1,185 @@
+.products {
+    margin-top: 96px;
+
+    &__title {
+        @include font(30px, 36px);
+        /*
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 400;
+    */
+        text-align: center;
+        text-transform: capitalize;
+        color: $black-color;
+    }
+
+    &__sub-title {
+        @include font();
+        /*
+    font-weight: 400;
+    line-height: 17px;
+    */
+        text-align: left;
+        text-align: center;
+        text-transform: capitalize;
+        color: $sub-title;
+        margin-top: 6px;
+    }
+
+    &__list {
+        margin-top: 48px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    &__item {
+        width: 360px;
+        margin-bottom: 30px;
+        background-color: $card-bkg;
+        position: relative;
+    }
+
+    &__item-img {
+        width: 360px;
+    }
+
+    &__item-title {
+        text-decoration: none;
+        display: block;
+        color: black;
+        @include font(14px, 16px);
+        /*
+    font-weight: 400;
+    line-height: 16px;
+    */
+        text-align: left;
+        text-transform: uppercase;
+        margin: 24px 18px 0 18px;
+    }
+
+    &__item-title:hover,
+    &__item-title:focus {
+        color: $white-color-hover;
+    }
+
+    &__item-title:active {
+        color: $white-color-active;
+    }
+
+    &__item-text {
+        @include font(14px, 17px, 300);
+        /*
+    font-weight: 300;
+    line-height: 17px;
+    */
+        text-align: left;
+        color: $card-color;
+        margin: 12px 18px 0 18px;
+    }
+
+    &__item-price {
+        @include font(16px, 19px);
+        /*
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    */
+        text-align: left;
+        color: $button-color;
+        margin: 18px;
+    }
+
+    &__item-hover {
+        position: absolute;
+        display: none;
+        top: 0;
+        left: 0;
+        width: 360px;
+        height: 420px;
+        background: rgba(58, 56, 56, 0.86)
+    }
+
+    &__item:hover>.products__item-hover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        animation: could 0.4s ease-in-out;
+    }
+
+    &__button-wpr {
+        display: flex;
+        justify-content: center;
+        margin-top: 18px;
+    }
+
+    &__button {
+        height: 47px;
+        width: 211px;
+        border: 1px solid #FF6A6A;
+        background: $white-color;
+        @include font(16px, 19px);
+        /*
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    */
+        text-align: center;
+        color: $button-color;
+        text-transform: capitalize;
+        cursor: pointer;
+    }
+
+    &__button:hover,
+    &__button:focus {
+        background: #FF6A6A;
+        color: $white-color;
+    }
+
+    &__button:active {
+        opacity: 0.5;
+    }
+}
+
+.products-hover {
+
+    &__button {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 138px;
+        height: 43px;
+        border: 1px solid $white-color;
+        background-color: rgba(0, 0, 0, 0);
+        cursor: pointer;
+    }
+
+    &__button:hover,
+    &__button:focus {
+        background-color: rgba(33, 33, 0, 0.5);
+        animation: rotation 0.2s ease;
+    }
+
+    &__button:active {
+        background-color: rgba(77, 77, 0, 0.7);
+    }
+
+    &__img {
+        width: 26px;
+    }
+
+    &__text {
+        @include font();
+        /*
+    font-weight: 400;
+    font-size: 14px;
+    */
+        line-height: 17px;
+        color: $white-color;
+    }
+}
+
+
+.products__button:hover {
+    animation: rotation 0.2s linear;
+}

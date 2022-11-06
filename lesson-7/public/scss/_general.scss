@@ -1,0 +1,40 @@
+html {
+    background-color: #E5E5E5;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    @include font();
+    max-width: 1600px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+.all-wrapper {
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/*Патерн для скрытия объекта, но он останется виден поясковых машинам*/
+.visually-hidden {
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    margin: -1px;
+}
+
+.conteiner {
+    max-width: 1140px;
+    padding: 0 16px;
+    margin: 0 auto;
+
+    @media (max-width: 767px) {
+        padding: 0;
+    }
+}

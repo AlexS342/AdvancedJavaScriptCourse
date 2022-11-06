@@ -1,0 +1,20 @@
+{
+    "amount": 260,
+    "countGoods": 2,
+    "contents": [
+        {
+            "quantity": 1,
+            "id_product": 3,
+            "product_name": "Синяя толстовка",
+            "img": "./img/3.jpg",
+            "price": 120
+        },
+        {
+            "quantity": 1,
+            "id_product": 2,
+            "product_name": "Рюкзак",
+            "img": "./img/2.jpg",
+            "price": 75
+        }
+    ]
+}

@@ -1,0 +1,218 @@
+.header {
+    background-color: $black-bkg;
+    position: relative;
+
+    &__wrp {
+        display: flex;
+        min-height: 75px;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1140px + 64px;
+        margin: 0 auto;
+    }
+
+    &__conteiner {
+        display: flex;
+        margin-left: 32px;
+
+        @media (max-width: 600px) {
+            margin-left: 16px;
+        }
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        margin: 0 0 0 41px;
+    }
+
+    &__search-button {
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+    }
+
+    &__search-icon {
+        fill: $white-color;
+        transition: fill 0.5s linear;
+    }
+
+    &__search-icon:hover,
+    &__search-icon:focus {
+        fill: $white-color-hover;
+        cursor: pointer;
+        outline: none;
+    }
+
+    &__search-icon:active {
+        fill: $white-color-active;
+        cursor: pointer;
+        outline: none;
+    }
+
+    &__search-input {
+        width: 200px;
+        height: 28px;
+        border: 0;
+        border-bottom: 1px solid #E1E1E1;
+        border-radius: 3px;
+        background: #302f2f;
+        padding-left: 5px;
+        margin-left: 5px;
+        color: $white-color;
+
+        @media (max-width: 600px) {
+            width: 100%;
+        }
+    }
+
+    &__search-input:hover {
+        outline: 1px solid $white-color-hover;
+    }
+
+    &__search-input:focus {
+        outline: 1px solid red;
+    }
+
+    &__manu-list {
+        display: flex;
+        align-items: center;
+        margin-right: 32px;
+
+        @media (max-width: 600px) {
+            margin-right: 16px;
+            margin-left: 16px;
+        }
+    }
+
+    &__burger {
+        border: none;
+        background: transparent;
+
+    }
+
+    &__burger-icon {
+        fill: $white-color;
+        transition: fill 0.5s linear;
+    }
+
+    &__burger-icon:hover,
+    &__burger-icon:focus {
+        fill: $white-color-hover;
+        cursor: pointer;
+        outline: none;
+    }
+
+    &__burger-icon:active {
+        fill: $white-color-active;
+        cursor: pointer;
+        outline: none;
+    }
+
+    &__link {
+        margin: 0 0 0 33px;
+
+        @media (max-width: 600px) {
+            display: none;
+        }
+    }
+
+    &__person-icon {
+        fill: $white-color;
+        transition: fill 0.5s linear;
+    }
+
+    &__person-icon:hover,
+    &__person-icon:focus {
+        fill: $white-color-hover;
+    }
+
+    &__person-icon:active {
+        fill: $white-color-active;
+    }
+
+    &__basket-icon {
+        fill: $white-color;
+        transition: fill 0.5s linear;
+    }
+
+    &__basket-icon:hover,
+    &__basket-icon:focus {
+        fill: $white-color-hover;
+    }
+
+    &__basket-icon:active {
+        fill: $white-color-active;
+    }
+
+    &__nav {
+        display: none;
+        position: absolute;
+        width: 232px;
+        min-height: 764px;
+        right: 0;
+        top: 75px;
+        background-color: $white-color;
+        padding: 0 0 0 34px;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+        z-index: 100;
+    }
+
+    &__burger:hover+.header__nav,
+    .header__burger:focus+.header__nav {
+        display: block;
+    }
+
+    &__nav:focus,
+    &__nav:hover {
+        display: block;
+    }
+
+    &__nav-close {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 38px;
+    }
+
+    &__nav-close-button {
+        border: none;
+        background-color: rgba(0, 0, 0, 0);
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        padding: 0;
+        margin: 16px 16px 0 0;
+        cursor: pointer;
+    }
+
+    &__nav-close-button:hover,
+    &__nav-close-button:focus {
+        background-color: $black-bkg;
+    }
+
+    &__nav-close-button:hover>.header__nav-close-img,
+    &__nav-close-button:focus>.header__nav-close-img {
+        fill: $white-color-hover;
+    }
+
+    &__nav-close-button:active>.header__nav-close-img {
+        fill: $white-color-active;
+    }
+
+
+    &__nav-close-img {
+        width: 12px;
+        margin: 2px;
+        fill: #9F9F9F;
+    }
+
+    &__nav-title {
+        @include font(14px, 17px, 700, );
+        /*
+        font-size: 14px;
+        line-height: 17px;
+        font-weight: 700;
+        */
+        text-transform: uppercase;
+        margin-bottom: 24px;
+    }
+}
